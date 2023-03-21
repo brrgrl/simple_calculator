@@ -35,7 +35,6 @@ double expression() {
             t = get_token();
             break;
         case ';':
-            cin.clear();
             previous = left;
             return left;
         default:
@@ -75,7 +74,6 @@ double primary() {
     case '(':
         {
             double d = expression();
-            cout << "parens: " << d << endl;
             t = get_token();
             if (t.kind!=')') error("')' expected");
             return d;
